@@ -1,16 +1,22 @@
 class App extends React.Component {
+    constructor() {
+        super();
+        this.state = { items: [] };
+    }
+
     render() {
         return (
           <div className="row">
-            <ItemList/>
+            <ItemList items={this.state.items}/>
             <ItemForm onSubmit={ this.onItemSubmited.bind(this) }/>
           </div>
         );
     }
 
-    onItemSubmited(event) {
-      event.preventDefault();
-      console.log(content);
+    onItemSubmited(item) {
+      this.setState({
+        items: this.state.items.concat(item)
+      });
     }
 }
 

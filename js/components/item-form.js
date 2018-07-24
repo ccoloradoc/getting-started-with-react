@@ -26,6 +26,8 @@ class ItemForm extends React.Component {
 
     handleSubmit(event) {
       event.preventDefault();
-      console.log(this.state);
+      this.props.onSubmit({
+        content: this.state.input
+      });
     }
 }

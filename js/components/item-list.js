@@ -6,6 +6,10 @@ class ItemList extends React.Component {
       }
   }
 
+  componentDidUpdate() {
+    console.log(this.props);
+  }
+
   renderItems() {
     return this.state.items.map(item => {
       return <Item content={item.content} />
