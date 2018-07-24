@@ -3,9 +3,14 @@ class App extends React.Component {
         return (
           <div className="row">
             <ItemList/>
-            <ItemForm/>
+            <ItemForm onSubmit={ this.onItemSubmited.bind(this) }/>
           </div>
         );
+    }
+
+    onItemSubmited(event) {
+      event.preventDefault();
+      console.log(content);
     }
 }
 
