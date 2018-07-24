@@ -1,10 +1,10 @@
-class Hello extends React.Component {
+class Item extends React.Component {
     render() {
-        return <h1>Hello world!</h1>;
+        return <li className="list-group-item">{ this.props.content}</li>;
     }
 }
 
 ReactDOM.render(
-    <Hello />,
+    <Item content="item #1"/>,
     document.getElementById("root")
 );
