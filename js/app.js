@@ -4,7 +4,31 @@ class Item extends React.Component {
     }
 }
 
+class ItemList extends React.Component {
+  constructor() {
+      super();
+      this.state = {
+        items: [{ content: 'Item #1'}, {content: 'Item #2'}]
+      }
+  }
+
+  renderItems() {
+    return this.state.items.map(item => {
+      return <Item content={item.content} />
+    });
+  }
+
+  render() {
+    return (
+      <ul class="list-group">
+        { this.renderItems() }
+      </ul>
+    );
+  }
+}
+
+
 ReactDOM.render(
-    <Item content="item #1"/>,
+    <ItemList content="item #1"/>,
     document.getElementById("root")
 );
